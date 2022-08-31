@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>PickaTopic.net</title>
+    <!--Bootstrap--> <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../bootstrap-5.1.3/css/bootstrap.min.css">
+    <!--Google Fonts--> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+ </head>
+ <body>
+        <header>
+            <a href="pickatopick.html">
+                <div class="banner">
+                    <div class="banner-content">
+                        <div class="banner-text">
+                            <h1 class="welcoming">PICK A TOPIC !</h1>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+                    <div class="account-button-container">
+                        <form target="_blank" action="sign-in form.html" class="trending-form">
+                            <button class="account-button">
+                                <img class="settings" src="../Images/icons8-gear.gif" alt="settings">
+                               <!-- <img class="settings-static" alt="settings" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAF7UlE
+                                QVR4nO2aW4hWVRTHfzP6jeCMjlpOtxlMRLIxspvmjTQssIhCB4vCiLwN9ZDBINWD4UNEJQZWRGAvRTRlGGYXyYfKklKKyDAZp8xSmtEaNa8z
+                                jaPTwzofc2Z/a+9zznfO+T4fzh8Wjmev6z5nr7322h9kyJAhQ4YMFyOGALlyOxEH04BXgO3AyiLkXwL+AV4FbkrQr5JgK9Bv0OMR5BcCF3yyF
+                                yLKlx07KZyAHsK9yWuAE4r87jQcrUxDKdCtPBsGbARqHXI1wCZgZBpOaRiakl5tAgAmAN8BJ4HLgbFAlff/To9nskX2VJIO5lHqCQC4Vnk2xiMXUpmAtJZATwo6T6egM3FUIlvefxQmsbh0DliD1AcXJa4GviH5wE36GhhXophCoxFJYi7HTwDvAsuAqUgCzHk01nu2HGhFkqJLV6dns6SYB6xHPvGpDCTQycBhh7P7gCXA8Ai2hgNLgXaH3sMM3jEmAos9H1+IGlwQZgJ9hgOngS+AIxYHzwItxNtpcsAqZFfRbBxBqs6jxvMLwKwYdgehEvjB4oCN2oHrDD0VyKfuQiPwMoWF0HSgI6IPuyJF6cCDEQ3/yOBAxwFrgYPIG2uw2LkE2O/pOATcbYzXI+VwFF8uKypiA6OBPSENtlP4lucbPLuQstiPHPCVwbde8aWe4GTr9yWxOucq4I8Ag93AFEV2DINPdv3A2wbPG4q+RRZfbkbyi8uX4xZfYqGRwmTjpxaH7H6Ff4U3ttKi70qHvmcdfpxCehGpYBb67O/Dne3fU2T6gDPK837g9wA/atCXQg+yXaeGSqRLYxpeEiDXosi4yFwiGh5T5LpI73wDSEPDNHqC4CJnjiLnou3IMdmFauRzN2Ujtc+iFil3KM8+RZYFSHbXJsOW0Gy4DUm63UiQfd7zHmAL0i8849l+wJCdh2zFqWALhTO+zDf+ujKu0UGgCRjh0QKgLaTsNp+9Fcr45kQjNrBXMTjVG8uh5wcteK35MQYpgILk9/pkblXG9yQRqA3HFIOXemNzQzjfj7x5GxYFyHYBz/j46xSeo/FCtGMY0KsY9CerO4FvA4IY4bAx0iLzF7KT1Cg+mby9JHyhUgU0I5+u5pyWrecjJW/UCailMJhmCkvnPLQJ6Ad+Ax4i5pZYATwCHLAYMZeAhnso7BUscPA3Gby/BPioLQE//UThoSo0whYvQWXnawZ/G/YkaDZAepFehA3TQ/q4NcBHFZ+HVL7coaMO+FOROYQkvJEeNWHv/hzC3kdoDunjzmihCzaEVN5qkc8hFV0YHUG0DX09bwwpv6GYCbCd0kw6iV79mZ9+XFpj6LeVwho9XMwENALvIJ9PV4CBpYbskiKDPA/s8P7Vxvyl+PIAXb3IqfJFEjogjQJuAT5UjLUzeO/9QOE5CaxDCqbNFqfv9+QnISfCc76xNuAKb7wKvcfwETAbabuldoFyo8X5VT6eegZ6+x3AU8gE5jFNkT9HYY0wAXgT+JmB4AGetvhwQ9zgwuIzxXg3si3lsRh4FL1QqqKw1e3K1BW+v2cip0LT/idFxFE0pqCXxR3I2w+DHYZsmMuMBvROUC9wfXj3k4GtL7ebcJOw1pC7K4C/AVkKms3V0d2Pj6HIjx00h/5GmhouLPTxa+vfjxnY2+HfU8Zfk/mDMKkH+UqqHfKjkRukuZbxKuT4q635PN0bN4g40LY7kzqRBqZrIkxUI90ebasz6a04AVQEs1jRgBQaYfuKp5Ee3pfIKe0A8K83NgoYj2yxtyMnOPPsb0M3knOOheRPDM8T/HZKRU+mHKuKoKuyUtJeivya49TIZy3P82u+lYF2dhz0ebqewN7vm4gsoZJiNnIJmX8L55G2uL/kHY+cCoMOUxp1Ib8T9gdWB7xv8B1HepFlwSTgV6T4meHgG4psdatx/5ymw+OZgzu53odcp29GflpbVtQSrRBZh30Cnkvcu4sQrnvCkp3myokh6DdIQVfiqSDVq2QLzgMfK883ldqRcqIBOf/7W1/TnRIZMmTIkCFD4vgfzJsB7r9vsh8AAAAASUVORK5CYII=">
+                                -->
+                            </button> 
+                        </form>                            
+                       </div>
+
+                        <!--Search Bar-->
+                        <div class="wrapper">
+                            <div class="search-input">
+                                <a href="" target="_blank" hidden></a>
+                                <input type="text" class="search-box" placeholder="Pick a topic, person, something">
+                                <div class="autocom-box">
+                                    <!-- here list are inserted from javascript -->
+                                </div>
+                                <div class="icon"><i class="fas fa-search"></i></div>
+                            </div>
+                        </div> 
+                        <!--end of search bar-->
+
+                        <div id="main-clicks-container" class="container">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-4 col-sm-6">
+                                    <form action="#TRENDING-TOPICS" class="trending-form">
+                                        <button class="trending-button main-clicks"> 
+                                            <div class="trending-wrapper">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="184" height="184" fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16">
+                                                        <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z"/>
+                                                      </svg>
+                                                    <p class="trending-p main-clicks-p">TRENDING!</p>
+                                            </div>
+                                        </button>
+                                    </form> <!-- end of trending button-->
+                                </div>
+        
+                                <div class="col-md-4 col-lg-4 col-sm-6">
+                                    <form action="#LATEST-NEWS" class="latest-form container">
+                                        <button class="latest-button main-clicks"> 
+                                            <div class="latest-wrapper">
+            
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="184" height="184" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+                                                        <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
+                                                        <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
+                                                      </svg>
+                                                    <p class="latest-p main-clicks-p">LATEST</p>
+                                            </div>
+                                        </button>
+                                    </form> <!-- end of LATEST button-->
+                                </div>
+        
+                                <div class="col-md-4 col-lg-4 col-sm-12">
+                                    <form action="#" class="random-form">
+                                        <button class="random-button main-clicks"> 
+                                            <div class="random-wrapper">
+            
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-question" viewBox="0 0 16 16">
+                                                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                                                      </svg>
+                                                    <p class="random-p main-clicks-p">RANDOM</p>
+                                            </div>
+                                        </button>
+                                    </form>   <!-- end of RANDOM button-->
+                                </div>
+                            </div>
+                        </div>
+
+                            
+        </header>
+
+        <main>
+            <div id="LATEST-NEWS" class="latest-news-border-wrapper">
+                <br> <h3 class="caption">Latests News</h3>
+                <fieldset id="latest-news-border" class="fieldset-1">
+                    
+                    <div class="thumbnails">
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic08.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic09.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+                </fieldset>
+    
+                <button class="load-more-1">Load More</button>    
+            </div>
+            
+            <div id="TRENDING-TOPICS" class="trending-topics-border-wrapper">
+                <br> <h3 class="caption">Trending Topics</h3>
+                <fieldset id="trending-topics-border" class="fieldset-2">
+                    <div class="thumbnails">
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="button style3 fit" data-poptrox="youtube,800x400">View</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic08.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" target="_blank" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic09.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="button style3 fit" data-poptrox="youtube,800x400">View</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="button style3 fit" data-poptrox="youtube,800x400">View</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+                </fieldset>
+    
+                <button class="load-more-1">Load More</button>    
+            </div>
+            
+            <div id="TRENDING-NEWS" class="trending-news-border-wrapper">
+                <br> <h3 class="caption">Trending News</h3>
+                <fieldset id="trending-news-border" class="fieldset-3">
+                    <div class="thumbnails">
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic08.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic09.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" target="_blank" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+    
+                <button class="load-more-1">Load More</button> <br> <br> <br>
+            </div>
+
+        </main>
+
+
+        <footer id="footer">
+            <div class="inner">
+                <h2></h2>
+                <p><br> </p>
+
+                <ul class="icons">
+                 <li><a href="https://www.instagram.com/pickatopic.net_insta/" target="_blank" class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                  </svg></a></li>
+                 <li><a href="mailto:pickatopic.com@gmail.com" class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                  </svg></a></li>
+                 <li><a href="https://www.twitter.com" target="_blank" class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                  </svg></a></li>
+                    
+                </ul>
+                <p class="copyright"><b>&copy; All Rights preserved PickaTopic.net </b>2022-2023</p>
+            </div>
+        </footer>
+
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>-->
+        <script src="../bootstrap-5.1.3/js/bootstrap.bundle.js"></script>
+        <script src="js/suggestions.js"></script>
+        <script src='js/script.js'></script>
+    </body>
+</html>
