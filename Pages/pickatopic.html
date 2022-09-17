@@ -13,7 +13,7 @@
  </head>
  <body>
         <header>
-            <a href="pickatopick.html">
+            <a href="pickatopic.html">
                 <div class="banner">
                     <div class="banner-content">
                         <div class="banner-text">
@@ -22,20 +22,60 @@
                     </div>
                 </div>
             </a>
+            <div class="account-button-container">
+                <div id="mySidepanel" class="sidepanel">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="flex-shrink-0 p-3 bg-white" style="width: 270px;">
+                        <a href="#" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                          <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                          <span class="fs-5 fw-semibold">Settings</span>
+                        </a>
+                        <ul class="list-unstyled ps-0">
+                          <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                              Home
+                            </button>
+                            <div class="collapse show" id="home-collapse">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="pickatopic.html" class="link-dark rounded">Refresh</a></li>
+                                <li><a href="#" class="link-dark rounded">Trending Topics</a></li>
+                                <li><a href="#" class="link-dark rounded">Latest</a></li>
+                                <li><a href="#" class="link-dark rounded">News</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="border-top my-3">
+                            <li class="mb-1">
+                              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                                Account
+                              </button>
+                              <div class="collapse" id="account-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                  <li><a href="sign-up form.html" target="_blank" class="link-dark rounded">New...</a></li>
+                                  <li><a href="sign-in form.html" target="_blank" class="link-dark rounded">Sign In</a></li>
+                                  <li><a href="profile-page.html" class="link-dark rounded">Profile</a></li>
+                                  <li><a href="#" class="link-dark rounded">Sign out</a></li>
+                                </ul>
+                              </div>
+                            </li></li>
 
-                    <div class="account-button-container">
-                        <form target="_blank" action="sign-in form.html" class="trending-form">
-                            <button class="account-button">
-                                <img class="settings" src="../Images/icons8-gear.gif" alt="settings">
-                               <!-- <img class="settings-static" alt="settings" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAF7UlE
-                                QVR4nO2aW4hWVRTHfzP6jeCMjlpOtxlMRLIxspvmjTQssIhCB4vCiLwN9ZDBINWD4UNEJQZWRGAvRTRlGGYXyYfKklKKyDAZp8xSmtEaNa8z
-                                jaPTwzofc2Z/a+9zznfO+T4fzh8Wjmev6z5nr7322h9kyJAhQ4YMFyOGALlyOxEH04BXgO3AyiLkXwL+AV4FbkrQr5JgK9Bv0OMR5BcCF3yyF
-                                yLKlx07KZyAHsK9yWuAE4r87jQcrUxDKdCtPBsGbARqHXI1wCZgZBpOaRiakl5tAgAmAN8BJ4HLgbFAlff/To9nskX2VJIO5lHqCQC4Vnk2xiMXUpmAtJZATwo6T6egM3FUIlvefxQmsbh0DliD1AcXJa4GviH5wE36GhhXophCoxFJYi7HTwDvAsuAqUgCzHk01nu2HGhFkqJLV6dns6SYB6xHPvGpDCTQycBhh7P7gCXA8Ai2hgNLgXaH3sMM3jEmAos9H1+IGlwQZgJ9hgOngS+AIxYHzwItxNtpcsAqZFfRbBxBqs6jxvMLwKwYdgehEvjB4oCN2oHrDD0VyKfuQiPwMoWF0HSgI6IPuyJF6cCDEQ3/yOBAxwFrgYPIG2uw2LkE2O/pOATcbYzXI+VwFF8uKypiA6OBPSENtlP4lucbPLuQstiPHPCVwbde8aWe4GTr9yWxOucq4I8Ag93AFEV2DINPdv3A2wbPG4q+RRZfbkbyi8uX4xZfYqGRwmTjpxaH7H6Ff4U3ttKi70qHvmcdfpxCehGpYBb67O/Dne3fU2T6gDPK837g9wA/atCXQg+yXaeGSqRLYxpeEiDXosi4yFwiGh5T5LpI73wDSEPDNHqC4CJnjiLnou3IMdmFauRzN2Ujtc+iFil3KM8+RZYFSHbXJsOW0Gy4DUm63UiQfd7zHmAL0i8849l+wJCdh2zFqWALhTO+zDf+ujKu0UGgCRjh0QKgLaTsNp+9Fcr45kQjNrBXMTjVG8uh5wcteK35MQYpgILk9/pkblXG9yQRqA3HFIOXemNzQzjfj7x5GxYFyHYBz/j46xSeo/FCtGMY0KsY9CerO4FvA4IY4bAx0iLzF7KT1Cg+mby9JHyhUgU0I5+u5pyWrecjJW/UCailMJhmCkvnPLQJ6Ad+Ax4i5pZYATwCHLAYMZeAhnso7BUscPA3Gby/BPioLQE//UThoSo0whYvQWXnawZ/G/YkaDZAepFehA3TQ/q4NcBHFZ+HVL7coaMO+FOROYQkvJEeNWHv/hzC3kdoDunjzmihCzaEVN5qkc8hFV0YHUG0DX09bwwpv6GYCbCd0kw6iV79mZ9+XFpj6LeVwho9XMwENALvIJ9PV4CBpYbskiKDPA/s8P7Vxvyl+PIAXb3IqfJFEjogjQJuAT5UjLUzeO/9QOE5CaxDCqbNFqfv9+QnISfCc76xNuAKb7wKvcfwETAbabuldoFyo8X5VT6eegZ6+x3AU8gE5jFNkT9HYY0wAXgT+JmB4AGetvhwQ9zgwuIzxXg3si3lsRh4FL1QqqKw1e3K1BW+v2cip0LT/idFxFE0pqCXxR3I2w+DHYZsmMuMBvROUC9wfXj3k4GtL7ebcJOw1pC7K4C/AVkKms3V0d2Pj6HIjx00h/5GmhouLPTxa+vfjxnY2+HfU8Zfk/mDMKkH+UqqHfKjkRukuZbxKuT4q635PN0bN4g40LY7kzqRBqZrIkxUI90ebasz6a04AVQEs1jRgBQaYfuKp5Ee3pfIKe0A8K83NgoYj2yxtyMnOPPsb0M3knOOheRPDM8T/HZKRU+mHKuKoKuyUtJeivya49TIZy3P82u+lYF2dhz0ebqewN7vm4gsoZJiNnIJmX8L55G2uL/kHY+cCoMOUxp1Ib8T9gdWB7xv8B1HepFlwSTgV6T4meHgG4psdatx/5ymw+OZgzu53odcp29GflpbVtQSrRBZh30Cnkvcu4sQrnvCkp3myokh6DdIQVfiqSDVq2QLzgMfK883ldqRcqIBOf/7W1/TnRIZMmTIkCFD4vgfzJsB7r9vsh8AAAAASUVORK5CYII=">
-                                -->
-                            </button> 
-                        </form>                            
-                       </div>
-
+                          <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                              More
+                            </button>
+                            <div class="collapse" id="dashboard-collapse">
+                              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">Ads</a></li>
+                                <li><a href="#" class="link-dark rounded">Donate</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>                        
+                </div>
+                  
+                <button class="openbtn account-button" onclick="openNav()">&#9776; <img class="settings" src="../Images/icons8-gear.gif" alt="settings"></button>
+            </div>
                         <!--Search Bar-->
                         <div class="wrapper">
                             <div class="search-input">
@@ -84,7 +124,7 @@
                                         <button class="random-button main-clicks"> 
                                             <div class="random-wrapper">
             
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-question" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="184" height="184" fill="currentColor" class="bi bi-question" viewBox="0 0 16 16">
                                                         <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
                                                       </svg>
                                                     <p class="random-p main-clicks-p">RANDOM</p>
@@ -348,8 +388,8 @@
         </main>
 
 
-        <footer id="footer">
-            <div class="inner">
+        <footer id="footer" class="sticky">
+            <div class="inner ">
                 <h2></h2>
                 <p><br> </p>
 
@@ -365,12 +405,16 @@
                   </svg></a></li>
                     
                 </ul>
-                <p class="copyright"><b>&copy; All Rights preserved PickaTopic.net </b>2022-2023</p>
+                <p class="copyright"><b>&copy; All Rights preserved PickaTopic.net </b><br>2022-2023</p>
             </div>
         </footer>
 
-        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+            const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
+            const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootstrap.Dropdown(dropdownToggleEl))
+        </script>
         <script src="../bootstrap-5.1.3/js/bootstrap.bundle.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="js/suggestions.js"></script>
         <script src='js/script.js'></script>
     </body>

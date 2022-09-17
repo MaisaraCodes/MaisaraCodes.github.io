@@ -7,9 +7,12 @@
   }
   html, body {
     margin: 0;
+    height: 100%;
   }
 body {
-     background-color: rgb(255, 253, 250);
+  background-color: rgb(255, 253, 250);
+  display: flex;
+  flex-direction: column;
  }
 
  a {
@@ -38,8 +41,13 @@ body {
     text-transform: uppercase;
 }
 
+
+.account-button-container {
+float: right;
+margin: 0;
+}
+
 .account-button {
- float: right;
  border: none;
 }
 .settings {
@@ -47,12 +55,64 @@ body {
   height: 64px;
 }
 
+/* The sidepanel menu */
+.sidepanel {
+ max-height: 800px; /* Specify a height */
+ height: 100%;
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
 
+/* The sidepanel links */
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  background-color: white;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(255, 253, 250);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: rgba(255, 253, 250, 0.89);
+}
 
 /*search bar*/
 .wrapper{
     max-width: 810px;
-    margin: 75px auto 280px auto;
+    margin: 75px auto 200px auto;
   }
 
 .wrapper .search-input {
@@ -164,9 +224,6 @@ body {
     font-weight: bold;
   }
 
-  latest-button {
-    padding: 0px;
-  }
   /*random*/
 
   .random-p {
@@ -482,13 +539,20 @@ fieldset {
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+
   }
+
   footer {
     display: block;
   }
 
+ /* .sticky { 
+    position: sticky;
+    bottom: 0;
+    position: -webkit-sticky;}  /* Safari */
+  
   #footer {
-		padding: 2em 0 1em 0;
+		padding: 0.1em 0 0 0;
 		background-color: rgb(245, 243, 240);
 		text-align: center;
 	}
@@ -548,6 +612,10 @@ fieldset {
         width: 100%;
         height: 100%;
     }
+
+    .wrapper .search-input {
+      margin-top: 150px;
+  }
 
     .thumbnails .box {
       width: 45%;
@@ -629,9 +697,9 @@ fieldset {
   display: none;
 }
 
-.account-button-container {
+/*.account-button-container {
   display: none;
-}
+}*/
 
  .thumbnails .box {
   width: 100%;
@@ -696,9 +764,9 @@ fieldset {
     display: none;
   }
 
-  .account-button-container {
+  /*.account-button-container {
     display: none;
-  }
+  }*/
 
   fieldset {
     margin: 150px 50px 10px 50px;
@@ -752,9 +820,9 @@ fieldset {
     display: none;
   }
 
-  .account-button-container {
+  /*.account-button-container {
     display: none;
-  }
+  }*/
 
   fieldset {
     margin: 150px 50px 10px 50px;
@@ -849,13 +917,14 @@ flex: 1;
 height: 1px;
 background: #eee;
 }
+
 .h-custom {
 height: calc(100% - 73px);
 }
+
 @media (max-width: 450px) {
 .h-custom {
 height: 100%;
 }
-
 }
 /*end of Sign-in form*/
